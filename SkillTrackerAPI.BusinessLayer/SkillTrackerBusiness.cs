@@ -64,7 +64,7 @@ namespace SkillTrackerAPI.BusinessLayer
                     Name = x.Name,
                     EmailId = x.EmailId,
                     MobileNo = x.MobileNo,
-                    TechnicalSkill = x.Technicalskills.Select(y => new TechnicalskillViewModel
+                    TechnicalSkill = x.Technicalskills.OrderByDescending(z=>z.Level).Select(y => new TechnicalskillViewModel
                     {
                         Id = y.Id,
                         Value = y.Name,

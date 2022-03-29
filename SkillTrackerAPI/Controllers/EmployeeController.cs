@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace SkillTrackerAPI.Controllers
 {
-    [Route("api/employee")]
+    [Route("api/v1/engineer")]
     [ApiController]
     public class EmployeeController : ControllerBase
     {
@@ -42,14 +42,14 @@ namespace SkillTrackerAPI.Controllers
         }
 
         [HttpPost]
-        [Route("addprofile")]
+        [Route("add-profile")]
         public async Task<AddSkillModel> AddProfile([FromBody] AddSkillModel profile)
         {
             return await _istb.AddPerson(profile);
         }
 
         [HttpPost]
-        [Route("updateprofile")]
+        [Route("update-profile")]
         public async Task<AddSkillModel> UpdateProfile([FromBody] AddSkillModel profile)
         {
             return await _istb.UpdatePerson(profile);

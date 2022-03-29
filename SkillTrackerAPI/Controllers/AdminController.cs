@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SkillTrackerAPI.Controllers
 {
-    [Route("api/admin")]
+    [Route("api/v1/admin")]
     [ApiController]
     public class AdminController : ControllerBase
     {
@@ -28,8 +28,7 @@ namespace SkillTrackerAPI.Controllers
             Profiles.Add(new AddSkillModel() { Name = "Rajesh", AssociateId = "CTS2", MobileNo = "9923412345", EmailId = "fmamil@gmail.com" });
         }
 
-        [HttpPost]
-        [Route("GetBySearch")]
+        [HttpPost]        
         public async Task<List<AddSkillModel>> GetBySearch(SearchSkillModel searchskill)
         {
             return await _istb.GetFilteredPersons(searchskill);
